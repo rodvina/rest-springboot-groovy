@@ -1,4 +1,4 @@
-## # rest-customerpolicy # ##
+## rest-customerpolicy ##
 
 ### Commands
 
