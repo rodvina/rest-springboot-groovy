@@ -1,0 +1,185 @@
+[
+	{
+		"userId": "swilliams0",
+		"policies": [
+			{
+				"policyNumber": "AA 816356",
+				"lob": "auto",
+				"balanceDue": 49.3,
+				"dueDate": "09/28/2016",
+				"lastBillAmt": 694.44
+			}, {
+				"policyNumber": "AA 816389",
+				"lob": "home",
+				"balanceDue": 256.34,
+				"dueDate": "07/18/2016",
+				"lastBillAmt": 916.71
+			}, {
+				"policyNumber": "AA 816392",
+				"lob": "boat",
+				"balanceDue": 266.97,
+				"dueDate": "10/17/2016",
+				"lastBillAmt": 609.37
+			}
+		]
+	}, {
+		"userId": "gjenkins1",
+		"policies": [
+			{
+				"policyNumber": "AA 816405",
+				"lob": "auto",
+				"balanceDue": 253.32,
+				"dueDate": "08/17/2016",
+				"lastBillAmt": 596.76
+			}, {
+				"policyNumber": "AA 816411",
+				"lob": "home",
+				"balanceDue": 174.83,
+				"dueDate": "05/20/2016",
+				"lastBillAmt": 684.8
+			}
+		]
+	}, {
+		"userId": "ljohnston2",
+		"policies": [
+			{
+				"policyNumber": "AA 816358",
+				"lob": "auto",
+				"balanceDue": 195.83,
+				"dueDate": "06/10/2016",
+				"lastBillAmt": 281.52
+			}
+		]
+	}, {
+		"userId": "aflores3",
+		"policies": [
+			{
+				"policyNumber": "AA 816409",
+				"lob": "auto",
+				"balanceDue": 55.04,
+				"dueDate": "05/12/2016",
+				"lastBillAmt": 245.31
+			}, {
+				"policyNumber": "AA 816370",
+				"lob": "home",
+				"balanceDue": 139.87,
+				"dueDate": "07/30/2016",
+				"lastBillAmt": 941.99
+			}, {
+				"policyNumber": "AA 816411",
+				"lob": "boat",
+				"balanceDue": 46.23,
+				"dueDate": "04/03/2016",
+				"lastBillAmt": 508.8
+			}
+		]
+	}, {
+		"userId": "rmendoza4",
+		"policies": [
+			{
+				"policyNumber": "AA 816355",
+				"lob": "auto",
+				"balanceDue": 185.87,
+				"dueDate": "03/04/2016",
+				"lastBillAmt": 525.3
+			}, {
+				"policyNumber": "AA 816361",
+				"lob": "home",
+				"balanceDue": 119.82,
+				"dueDate": "10/04/2016",
+				"lastBillAmt": 609.46
+			}, {
+				"policyNumber": "AA 816368",
+				"lob": "boat",
+				"balanceDue": 228.82,
+				"dueDate": "03/03/2016",
+				"lastBillAmt": 412.11
+			}
+		]
+	}, {
+		"userId": "jmills5",
+		"policies": [
+			{
+				"policyNumber": "AA 816380",
+				"lob": "auto",
+				"balanceDue": 226.84,
+				"dueDate": "05/06/2016",
+				"lastBillAmt": 254.08
+			}
+		]
+	}, {
+		"userId": "mfisher6",
+		"policies": [
+			{
+				"policyNumber": "AA 816401",
+				"lob": "auto",
+				"balanceDue": 32.19,
+				"dueDate": "10/09/2016",
+				"lastBillAmt": 499.45
+			}, {
+				"policyNumber": "AA 816410",
+				"lob": "home",
+				"balanceDue": 175.07,
+				"dueDate": "06/26/2016",
+				"lastBillAmt": 814.67
+			}, {
+				"policyNumber": "AA 816353",
+				"lob": "boat",
+				"balanceDue": 257,
+				"dueDate": "11/04/2016",
+				"lastBillAmt": 954.54
+			}
+		]
+	}, {
+		"userId": "jbryant7",
+		"policies": [
+			{
+				"policyNumber": "AA 816387",
+				"lob": "auto",
+				"balanceDue": 44.12,
+				"dueDate": "09/30/2016",
+				"lastBillAmt": 912.97
+			}
+		]
+	}, {
+		"userId": "pthompson8",
+		"policies": [
+			{
+				"policyNumber": "AA 816404",
+				"lob": "auto",
+				"balanceDue": 151.1,
+				"dueDate": "09/17/2016",
+				"lastBillAmt": 295.89
+			}, {
+				"policyNumber": "AA 816403",
+				"lob": "home",
+				"balanceDue": 147.02,
+				"dueDate": "06/13/2016",
+				"lastBillAmt": 408.08
+			}, {
+				"policyNumber": "AA 816389",
+				"lob": "boat",
+				"balanceDue": 73.81,
+				"dueDate": "10/08/2016",
+				"lastBillAmt": 549.32
+			}
+		]
+	}, {
+		"userId": "dprice9",
+		"policies": [
+			{
+				"policyNumber": "AA 816376",
+				"lob": "auto",
+				"balanceDue": 128.41,
+				"dueDate": "05/08/2016",
+				"lastBillAmt": 850.4
+			}, {
+				"policyNumber": "AA 816405",
+				"lob": "home",
+				"balanceDue": 107.12,
+				"dueDate": "07/05/2016",
+				"lastBillAmt": 542.07
+			}
+		]
+	}
+]
