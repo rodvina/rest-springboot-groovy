@@ -33,6 +33,6 @@ def POLICY = "AA 816410"
 policydetail.find {it.policyNumber.equals(POLICY)}.vehicles = policydetail.find {it.policyNumber.equals(POLICY)}.vehicles.plus(vehicle)      
 
 policydetail.find {it.policyNumber.equals(POLICY)}.vehicles.removeAll {it.id.equals("63f00821-5880-4311-bbc9-2d86d5ef38fa")}
-
-def idx = policydetail.find {it.policyNumber.equals(POLICY)}.vehicles.findIndexOf {it.id.equals("2343343")}
- policydetail.find {it.policyNumber.equals(POLICY)}.vehicles[idx] = vehicle2
+//
+//def idx = policydetail.find {it.policyNumber.equals(POLICY)}.vehicles.findIndexOf {it.id.equals("2343343")}
+// policydetail.find {it.policyNumber.equals(POLICY)}.vehicles[idx] = vehicle2

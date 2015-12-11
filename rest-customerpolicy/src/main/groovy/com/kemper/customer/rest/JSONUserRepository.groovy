@@ -7,8 +7,8 @@ import javax.annotation.PostConstruct
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
-import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.core.io.ClassPathResource
 import org.springframework.core.io.Resource
 import org.springframework.stereotype.Component
 
@@ -22,9 +22,6 @@ class JSONUserRepository {
 	@Value("classpath:policydetail.json")
 	private Resource policyDetailFile;
 	
-//	@Autowired
-//	private ResourceUtil resourceUtil;
-	
 	def userpolicy, policydetail
 	
 	
@@ -32,30 +29,17 @@ class JSONUserRepository {
 	init() {
 		
 		JsonSlurper slurper = new JsonSlurper()
-		userpolicy = slurper.parse(userPolicyFile.getFile())
-		policydetail = slurper.parse(policyDetailFile.getFile())
-		
-		
-//		policydetail = slurper.parse(resourceUtil.getPolicyDetailFile().getFile())
-//		userpolicy = slurper.parse(resourceUtil.getUserPolicyFile().getFile())
+		//getFile() method will not work when run from executable jar because this method
+		//expects the file to reside on the file system, not in jar.  That's why it only
+		//works when running from STS, not from executable jar.
+		//use getInputStream() instead
+//		userpolicy = slurper.parse(userPolicyFile.getFile())
+//		policydetail = slurper.parse(policyDetailFile.getFile())
+			
+		userpolicy = slurper.parse(userPolicyFile.getInputStream())
+		policydetail = slurper.parse(policyDetailFile.getInputStream())
 		
 	}
-	
-//	def getUserPolicy() {
-//		if (userPolicy == null) {
-//			JsonSlurper slurper = new JsonSlurper()
-//			userpolicy = slurper.parse(userPolicyFile.getFile())
-//		}
-//		return userPolicy
-//	}
-//	
-//	def getPolicyDetail() {
-//		if (policyDetail == null) {
-//			JsonSlurper slurper = new JsonSlurper()
-//			policydetail = slurper.parse(policyDetailFile.getFile())
-//		}
-//		return policydetail
-//	}
 	
 	def getPoliciesByUser(userId) {
 		logger.info "getting policies for userId:"+userId
@@ -78,9 +62,9 @@ class JSONUserRepository {
 		
 	}
 	
-	void removeVehicle(policyNum, vehicleId) {
+	def removeVehicle(policyNum, vehicleId) {
 		logger.info "removing vehicleId:"+vehicleId+" for policy:"+policyNum
-		getPolicyDetail(policyNum).vehicles.removeAll { it.id.equals(vehicleId) }
+		return getPolicyDetail(policyNum).vehicles.removeAll { it.id.equals(vehicleId) }
 	}
 	
 	def addDriver(policyNum, def driver) {
@@ -100,8 +84,8 @@ class JSONUserRepository {
 
 	}
 	
-	void removeDriver(policyNum, driverId) {
+	def removeDriver(policyNum, driverId) {
 		logger.info "removing driverId:"+driverId+" for policy:"+policyNum
-		getPolicyDetail(policyNum).drivers.removeAll { it.id.equals(driverId) }
+		return getPolicyDetail(policyNum).drivers.removeAll { it.id.equals(driverId) }
 	}
 }
