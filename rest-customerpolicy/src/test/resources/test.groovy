@@ -3,10 +3,13 @@ import groovy.json.JsonSlurper
 import java.nio.file.Paths
 
 JsonSlurper slurper = new JsonSlurper()
-def policydetail
+def policydetail,  userpolicy
 
 Paths.get('C:/mongo/EGit_Repositories/rest-customerpolicy/rest-customerpolicy/src/main/resources/policydetail.json').withReader { reader ->
     policydetail = slurper.parse(reader)
+}
+Paths.get('C:/mongo/EGit_Repositories/rest-customerpolicy/rest-customerpolicy/src/main/resources/userpolicy.json').withReader { reader ->
+    userpolicy = slurper.parse(reader)
 }
 
 
@@ -36,3 +39,5 @@ policydetail.find {it.policyNumber.equals(POLICY)}.vehicles.removeAll {it.id.equ
 //
 //def idx = policydetail.find {it.policyNumber.equals(POLICY)}.vehicles.findIndexOf {it.id.equals("2343343")}
 // policydetail.find {it.policyNumber.equals(POLICY)}.vehicles[idx] = vehicle2
+
+userpolicy.collect {it.userId} 

@@ -16,41 +16,46 @@ public class UserController {
 	@Autowired
 	JSONUserRepository userRepository;
 
-    @RequestMapping("/user/{userId}/policies")
+	@RequestMapping("/users")
+	def getUsers() {
+		return userRepository.getUsers()
+	}
+	
+    @RequestMapping("/users/{userId}/policies")
     def getPoliciesForUser(@PathVariable String userId) {
 		return userRepository.getPoliciesByUser(userId)
     }
 	
-	@RequestMapping("/user/{userId}/policies/{policyNum}")
+	@RequestMapping("/users/{userId}/policies/{policyNum}")
 	def getPolicyDetail(@PathVariable String userId, @PathVariable String policyNum) {
 		return userRepository.getPolicyDetail(policyNum)
 	}
 	
-	@RequestMapping(value = "/user/{userId}/policies/{policyNum}/vehicles", method = RequestMethod.POST)
+	@RequestMapping(value = "/users/{userId}/policies/{policyNum}/vehicles", method = RequestMethod.POST)
 	def addVehicle(@PathVariable String userId, @PathVariable String policyNum, 
 				@RequestBody def vehicle) {
 		return userRepository.addVehicle(policyNum, vehicle)
 	}
 				
-	@RequestMapping(value = "/user/{userId}/policies/{policyNum}/vehicles/{vehicleId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/users/{userId}/policies/{policyNum}/vehicles/{vehicleId}", method = RequestMethod.DELETE)
 	def removeVehicle(@PathVariable String userId, @PathVariable String policyNum,
 				@PathVariable def vehicleId) {
 		return userRepository.removeVehicle(policyNum, vehicleId)
 	}
 	
-	@RequestMapping(value = "/user/{userId}/policies/{policyNum}/drivers", method = RequestMethod.POST)
+	@RequestMapping(value = "/users/{userId}/policies/{policyNum}/drivers", method = RequestMethod.POST)
 	def addDriver(@PathVariable String userId, @PathVariable String policyNum,
 				@RequestBody def driver) {
 		return userRepository.addDriver(policyNum, driver)
 	}
 				
-	@RequestMapping(value = "/user/{userId}/policies/{policyNum}/drivers/{driverId}",  method = RequestMethod.PUT)
+	@RequestMapping(value = "/users/{userId}/policies/{policyNum}/drivers/{driverId}",  method = RequestMethod.PUT)
 	public Policy updateDriver(@PathVariable String userId, @PathVariable String policyNum, 
 								@PathVariable String driverId, @RequestBody def driver) {
 		return userRepository.updateDriver(policyNum, driver) 
 	}
 								
-	@RequestMapping(value = "/user/{userId}/policies/{policyNum}/drivers/{driverId}", method = RequestMethod.DELETE)
+	@RequestMapping(value = "/users/{userId}/policies/{policyNum}/drivers/{driverId}", method = RequestMethod.DELETE)
 	def removeDriver(@PathVariable String userId, @PathVariable String policyNum,
 				@PathVariable def driverId) {
 		return userRepository.removeDriver(policyNum, driverId)
